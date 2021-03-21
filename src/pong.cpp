@@ -33,24 +33,39 @@ Ball::Ball(double y, double x, int speed){
     set_speed(speed);
 }
 
+//---------------------------------------
 // TODO: Use abstract base class Location
+// --------------------------------------
+
 // Player
 class Player {
 public:
     Player(int x, int y);
-    int getX();
-    int getY();
-    int get_height();
-    void setX(int x);
-    void setY(int y);
+    int getX() const { return x; }
+    int getY() const { return y; }
+    int get_height() const { return height; }
+    void setX(int x) { this->x = x; }
+    void setY(int y) { this->y = y; }
 
-    void draw_player(int x, int y);
+    void draw_player(int x, int y){
+        mvaddch(y+2, x, '|');
+        mvaddch(y+1, x, '|');
+        mvaddch( y,  x, '|');
+        mvaddch(y-1, x, '|');
+        mvaddch(y-2, x, '|');
+    }
 
 private:
     int x;
     int y;
     int height;
 };
+
+
+Player::Player(int y, int x){
+    setX(x);
+    setY(y);
+}
 
 // PongEngine
 class PongEngine {
