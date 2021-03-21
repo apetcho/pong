@@ -70,28 +70,51 @@ Player::Player(int y, int x){
 // PongEngine
 class PongEngine {
 public:
+    PongEngine();
     // Player player[2];
     // Ball ball;
     //
-    // setup()
-    // mainloop()
-    // terminate()
+    void setup();
+    void mainloop();
+    void terminate();
 
+    ~PongEngine(){}
 private:
-    // ch
-    // width
-    // height
-    // dir
-    // playerPts[2] = {0, 0};
-    // quit
-    // wallTexture, playerTexture;
-    // playerServe[2] = {false, false};
+    int ch;
+    int width = 80;     // Board/Field/Screen width
+    int height = 24;    // Board/Field/Screen height
+    int dir = 1;        // --
+    int playerPts[2] = {0, 0}; // XXX
+    bool quit;          // Termination flag
+    char wallTexture, playerTexture;
+    bool playerServe[2] = {false, false}; // XXX
 
-    // input()
-    // draw()
-    // logic()
+    // Two players
+    Player players[] = {Player(height/2, 2), Player(height/2, width-3)};
+    Ball ball = Ball(height/2, 3, 1);
+
+
+    void input();
+    void draw();
+    void logic();
 };
 
+
+PongEngine::PongEngine(){
+    //int ch;
+    //int width = 80;     // Board/Field/Screen width
+    //int height = 24;    // Board/Field/Screen height
+    //int dir = 1;        // --
+    //int playerPts[2] = {0, 0}; // XXX
+    //bool quit;          // Termination flag
+    //char wallTexture, playerTexture;
+    //bool playerServe[2] = {false, false}; // XXX
+
+    // Two players
+    //Player players[] = {Player(height/2, 2), Player(height/2, width-3)};
+    //Ball ball = Ball(height/2, 3, 1);
+
+}
 
 /**
  * MAIN DRIVER
