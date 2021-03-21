@@ -14,11 +14,15 @@ public:
     void setX(double x) { this->x = x; }
     void setY(double y) { this->y = y; }
     void set_speed(int speed){ this->speed = speed; }
-    void draw_ball(double x, double y);
+
+    //
+    void draw_ball(double x, double y){
+        mvaddch(x, y, 'o');
+    }
 
 private:
-    double x; // XXX Check the type
-    double y; // XXX Check the type
+    double x;
+    double y;
     int speed;
 };
 
