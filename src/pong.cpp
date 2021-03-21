@@ -26,6 +26,13 @@ private:
     int speed;
 };
 
+// Constructor
+Ball::Ball(double y, double x, int speed){
+    setY(y);
+    setX(x);
+    set_speed(speed);
+}
+
 // TODO: Use abstract base class Location
 // Player
 class Player {
