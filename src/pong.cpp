@@ -7,12 +7,13 @@ public:
     Ball(double x, double y, int speed);
 
     //
-    double getX();
-    double getY();
-    int get_speed();
-    void setX(double x);
-    void setY(double y);
-    void set_speed(int speed);
+    double getX() const{ return x; }
+    double getY() const { return y; }
+    // XXX: double speed; ???
+    int get_speed() const { return speed; }
+    void setX(double x) { this->x = x; }
+    void setY(double y) { this->y = y; }
+    void set_speed(int speed){ this->speed = speed; }
     void draw_ball(double x, double y);
 
 private:
